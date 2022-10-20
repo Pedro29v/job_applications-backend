@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(router);
+console.log(process.env.PORT);
 
 async function main() {
   try {
