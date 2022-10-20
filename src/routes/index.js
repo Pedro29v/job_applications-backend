@@ -16,5 +16,6 @@ router.get("/applications/:userEmail", getJobApplication);
 router.get("/filter/:userEmail", filterJobApplication);
 router.get("/detail/:userEmail", getDetail);
 router.post("/newUser", registerUser);
+router.get("/", (req, res) => res.status(200).json({ ok: "todo bien" }));
 
 module.exports = { router };
