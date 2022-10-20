@@ -3,6 +3,9 @@ const { sequelize } = require("./database/database");
 const { router } = require("./routes/index");
 require("dotenv").config();
 const cors = require("cors");
+const { PORT } = require("./config");
+
+console.log(process.env.PORT);
 
 const app = express();
 
@@ -15,8 +18,8 @@ async function main() {
   try {
     await sequelize.sync({ force: false });
 
-    app.listen(3001, () => {
-      console.log("server listen on port", 3001);
+    app.listen(PORT, () => {
+      console.log("server listen on port", PORT);
     });
   } catch (error) {}
 }
