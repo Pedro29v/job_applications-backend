@@ -5,6 +5,7 @@ const { deleteTask } = require("../controllers/deleteJobApplication");
 const { getJobApplication } = require("../controllers/getJobApplication");
 const { registerUser } = require("../controllers/userRegister");
 const { filterJobApplication } = require("../controllers/filter");
+const { getDetail } = require("../controllers/getDetail");
 
 const router = Router();
 
@@ -13,6 +14,7 @@ router.put("/edit/:id", editJobApplication);
 router.delete("/delete/:id", deleteTask);
 router.get("/applications/:userEmail", getJobApplication);
 router.get("/filter/:userEmail", filterJobApplication);
+router.get("/detail/:userEmail", getDetail);
 router.post("/newUser", registerUser);
 
 module.exports = { router };

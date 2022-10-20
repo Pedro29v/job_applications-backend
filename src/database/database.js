@@ -1,5 +1,4 @@
 const { Sequelize } = require("sequelize");
-const { userModel } = require("../models/users.js");
 const { applicationsModel } = require("../models/applications.js");
 
 const dotenv = require("dotenv");
@@ -16,19 +15,11 @@ const sequelize = new Sequelize(
   }
 );
 
-userModel(sequelize);
 applicationsModel(sequelize);
 
-const { user, applications } = sequelize.models;
-user.hasMany(applications, {
-  sourceKey: "id",
-});
-applications.belongsTo(user, {
-  targetKey: "id",
-});
+const { applications } = sequelize.models;
 
 module.exports = {
   sequelize,
-  user,
   applications,
 };

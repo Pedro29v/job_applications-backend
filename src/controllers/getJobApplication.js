@@ -8,7 +8,7 @@ const getJobApplication = async (req, res) => {
     const allApplications = await applications.findAll({
       order: [
         // Will escape title and validate DESC against a list of valid direction parameters
-        ["date", inf],
+        ["date", "Desc"],
       ],
       where: {
         userEmail: userEmail,

@@ -3,7 +3,7 @@ const { applications } = require("../database/database");
 const deleteTask = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
+
     await applications.destroy({ where: { id: id } });
 
     return res.status(204).json();
