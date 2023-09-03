@@ -1,4 +1,4 @@
-Access-Control-Allow-Origin: *
+
 
 const express = require("express");
 const { sequelize } = require("./database/database");
